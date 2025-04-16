@@ -1,5 +1,6 @@
 package vn.ert45ty.coursemanagement.infrastructure.persistence.mapper;
 
+import vn.ert45ty.coursemanagement.domain.common.Role;
 import vn.ert45ty.coursemanagement.presentation.dto.request.CreateUserRequest;
 import vn.ert45ty.coursemanagement.domain.model.User;
 import vn.ert45ty.coursemanagement.infrastructure.persistence.entity.UserEntity;
@@ -34,6 +35,7 @@ public class UserMapper {
                 .name(request.getName())
                 .email(request.getEmail())
                 .password(request.getPassword())
+                .role(Role.STUDENT)
                 .build();
     }
 

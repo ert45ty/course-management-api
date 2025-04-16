@@ -22,4 +22,9 @@ public class UserRepositoryImpl implements UserRepository {
     public Long create(User user) {
         return null;
     }
+
+    @Override
+    public Boolean existByEmail(String email) {
+        return springDataUserRepository.existsByEmail(email);
+    }
 }
