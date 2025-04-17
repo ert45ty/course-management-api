@@ -22,7 +22,7 @@ public class CreateUserService implements CreateUserUseCase {
     public Long execute(CreateUserRequest request) {
 
         if (!request.getPassword().equals(request.getRePassword())){
-            throw new PasswordNotMatchException();
+            throw new PasswordNotMatchException("Re-password does not match");
         }
         if (userRepository.existByEmail(request.getEmail())){
             throw new EmailAlreadyExistException();

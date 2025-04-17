@@ -4,6 +4,7 @@ import vn.ert45ty.coursemanagement.domain.common.Role;
 import vn.ert45ty.coursemanagement.presentation.dto.request.CreateUserRequest;
 import vn.ert45ty.coursemanagement.domain.model.User;
 import vn.ert45ty.coursemanagement.infrastructure.persistence.entity.UserEntity;
+import vn.ert45ty.coursemanagement.presentation.dto.request.UpdateUserRequest;
 import vn.ert45ty.coursemanagement.presentation.dto.response.UserResponse;
 
 public class UserMapper {
@@ -36,6 +37,15 @@ public class UserMapper {
                 .email(request.getEmail())
                 .password(request.getPassword())
                 .role(Role.STUDENT)
+                .build();
+    }
+
+    public static UserResponse domainToResponse(User user){
+        return UserResponse.builder()
+                .id(user.getId())
+                .email(user.getEmail())
+                .name(user.getName())
+                .created_at(user.getCreate_at())
                 .build();
     }
 
