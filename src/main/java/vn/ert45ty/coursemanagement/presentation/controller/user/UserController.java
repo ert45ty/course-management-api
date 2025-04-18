@@ -3,16 +3,20 @@ package vn.ert45ty.coursemanagement.presentation.controller.user;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
+import jakarta.validation.constraints.Min;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import vn.ert45ty.coursemanagement.application.service.user.*;
+import vn.ert45ty.coursemanagement.domain.model.PageDomain;
 import vn.ert45ty.coursemanagement.domain.model.User;
+import vn.ert45ty.coursemanagement.infrastructure.persistence.mapper.PageMapper;
 import vn.ert45ty.coursemanagement.infrastructure.persistence.mapper.UserMapper;
 import vn.ert45ty.coursemanagement.presentation.dto.request.ChangePasswordRequest;
 import vn.ert45ty.coursemanagement.presentation.dto.request.CreateUserRequest;
 import vn.ert45ty.coursemanagement.presentation.dto.request.UpdateUserRequest;
+import vn.ert45ty.coursemanagement.presentation.dto.response.PageResponse;
 import vn.ert45ty.coursemanagement.presentation.dto.response.ResponseData;
 import vn.ert45ty.coursemanagement.presentation.dto.response.ResponseError;
 import vn.ert45ty.coursemanagement.presentation.dto.response.UserResponse;
@@ -28,6 +32,7 @@ public class UserController {
     private final ChangePasswordService changePasswordService;
     private final DeleteUserService deleteUserService;
     private final GetUserService getUserService;
+    private final GetListUserService getListUserService;
 
     @Operation(summary = "Add user", description = "API create new user for user")
     @PostMapping("/create")
@@ -91,6 +96,17 @@ public class UserController {
             log.error("errorMessage={}", e.getMessage(), e.getCause());
             return new ResponseError(HttpStatus.BAD_REQUEST.value(), "Get detail user fail");
         }
+    }
+
+    @GetMapping("/list-users-with-search-and-sort")
+    public ResponseData<?> userListWithSearchAndSort(@Min(1) @RequestParam(defaultValue = "1") int pageNo,
+                                                     @RequestParam(defaultValue = "20") int pageSize,
+                                                     @RequestParam(required = false) String search,
+                                                     @RequestParam(required = false) String sortBy){
+        log.info("Request get all of users");
+        PageDomain<User> page = getListUserService.execute(pageNo, pageSize, sortBy, search);
+        PageResponse<UserResponse> response = PageMapper.map(page, UserMapper::domainToResponse);
+        return new ResponseData<>(HttpStatus.OK.value(), "list user", response);
     }
 
 
