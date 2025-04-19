@@ -1,4 +1,4 @@
-package vn.ert45ty.coursemanagement.domain.usecase;
+package vn.ert45ty.coursemanagement.domain.usecase.UserUseCase;
 
 import vn.ert45ty.coursemanagement.domain.model.PageDomain;
 import vn.ert45ty.coursemanagement.domain.model.User;

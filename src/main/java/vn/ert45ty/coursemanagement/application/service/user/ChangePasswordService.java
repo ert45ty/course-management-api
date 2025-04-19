@@ -5,10 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import vn.ert45ty.coursemanagement.domain.model.User;
 import vn.ert45ty.coursemanagement.domain.repository.UserRepository;
-import vn.ert45ty.coursemanagement.domain.usecase.ChangePasswordUseCase;
+import vn.ert45ty.coursemanagement.domain.usecase.UserUseCase.ChangePasswordUseCase;
 import vn.ert45ty.coursemanagement.presentation.advice.PasswordNotMatchException;
 import vn.ert45ty.coursemanagement.presentation.advice.ResourceNotFoundException;
-import vn.ert45ty.coursemanagement.presentation.dto.request.ChangePasswordRequest;
+import vn.ert45ty.coursemanagement.presentation.dto.request.user.ChangePasswordRequest;
 
 @Service
 @Slf4j

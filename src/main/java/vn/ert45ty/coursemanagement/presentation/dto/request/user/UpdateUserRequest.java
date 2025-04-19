@@ -1,4 +1,4 @@
-package vn.ert45ty.coursemanagement.presentation.dto.request;
+package vn.ert45ty.coursemanagement.presentation.dto.request.user;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

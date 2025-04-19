@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import vn.ert45ty.coursemanagement.domain.model.PageDomain;
 import vn.ert45ty.coursemanagement.domain.model.User;
 import vn.ert45ty.coursemanagement.domain.repository.UserRepository;
-import vn.ert45ty.coursemanagement.domain.usecase.GetListUserUseCase;
+import vn.ert45ty.coursemanagement.domain.usecase.UserUseCase.GetListUserUseCase;
 
 import java.util.List;
 

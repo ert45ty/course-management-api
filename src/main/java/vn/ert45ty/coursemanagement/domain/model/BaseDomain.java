@@ -4,18 +4,15 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
-import vn.ert45ty.coursemanagement.domain.common.Role;
 
+import java.util.Date;
 
 @Getter
-@Setter
 @SuperBuilder
+@Setter
 @NoArgsConstructor
-public class User extends BaseDomain{
-
-    private String name;
-    private String email;
-    private String password;
-    private Role role;
-
+public abstract class BaseDomain {
+    private Long id;
+    private Date created_at;
+    private Date updated_at;
 }

@@ -5,12 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import vn.ert45ty.coursemanagement.domain.model.User;
 import vn.ert45ty.coursemanagement.domain.repository.UserRepository;
-import vn.ert45ty.coursemanagement.domain.usecase.CreateUserUseCase;
+import vn.ert45ty.coursemanagement.domain.usecase.UserUseCase.CreateUserUseCase;
 import vn.ert45ty.coursemanagement.infrastructure.persistence.mapper.UserMapper;
 import vn.ert45ty.coursemanagement.presentation.advice.EmailAlreadyExistException;
 import vn.ert45ty.coursemanagement.presentation.advice.PasswordNotMatchException;
-import vn.ert45ty.coursemanagement.presentation.dto.request.CreateUserRequest;
-import vn.ert45ty.coursemanagement.presentation.dto.response.UserResponse;
+import vn.ert45ty.coursemanagement.presentation.dto.request.user.CreateUserRequest;
 
 @Service
 @RequiredArgsConstructor

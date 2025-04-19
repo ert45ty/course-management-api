@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import vn.ert45ty.coursemanagement.domain.model.User;
 import vn.ert45ty.coursemanagement.domain.repository.UserRepository;
-import vn.ert45ty.coursemanagement.domain.usecase.GetUserUseCase;
+import vn.ert45ty.coursemanagement.domain.usecase.UserUseCase.GetUserUseCase;
 import vn.ert45ty.coursemanagement.presentation.advice.ResourceNotFoundException;
 
 @Service

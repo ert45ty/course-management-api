@@ -1,4 +1,4 @@
-package vn.ert45ty.coursemanagement.presentation.controller.user;
+package vn.ert45ty.coursemanagement.presentation.controller.admin;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -13,9 +13,9 @@ import vn.ert45ty.coursemanagement.domain.model.PageDomain;
 import vn.ert45ty.coursemanagement.domain.model.User;
 import vn.ert45ty.coursemanagement.infrastructure.persistence.mapper.PageMapper;
 import vn.ert45ty.coursemanagement.infrastructure.persistence.mapper.UserMapper;
-import vn.ert45ty.coursemanagement.presentation.dto.request.ChangePasswordRequest;
-import vn.ert45ty.coursemanagement.presentation.dto.request.CreateUserRequest;
-import vn.ert45ty.coursemanagement.presentation.dto.request.UpdateUserRequest;
+import vn.ert45ty.coursemanagement.presentation.dto.request.user.ChangePasswordRequest;
+import vn.ert45ty.coursemanagement.presentation.dto.request.user.CreateUserRequest;
+import vn.ert45ty.coursemanagement.presentation.dto.request.user.UpdateUserRequest;
 import vn.ert45ty.coursemanagement.presentation.dto.response.PageResponse;
 import vn.ert45ty.coursemanagement.presentation.dto.response.ResponseData;
 import vn.ert45ty.coursemanagement.presentation.dto.response.ResponseError;
